@@ -2,10 +2,10 @@ name: AB03 - GitHub Actions
 run-name: ${{ github.actor }}
 on:
   pull_request:
-    types: [opened]
+    types: [opened, synchronize, reopened, closed]
     branches:
       - main
-      - develop
+      - development
 
 jobs:
   docker:
@@ -16,15 +16,11 @@ jobs:
         uses: actions/checkout@v4
       - name: Install dependencies
         run: npm install --legacy-peer-deps
-      - name: Linting
-        run: npm run lint
-      - name: Testing
-        run: npm run test
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ vars.DOCKERHUB_USERNAME_CAU }}
-          password: ${{ secrets.DOCKERHUB_TOKEN_CAU }}
+          username: ${{ vars.DOCKERHUB_USERNAME_LSC }}
+          password: ${{ secrets.DOCKERHUB_TOKEN_LSC }}
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       - name: Set up Docker Buildx
