@@ -23,8 +23,8 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ vars.DOCKERHUB_USERNAME_CAU }}
-          password: ${{ secrets.DOCKERHUB_TOKEN_CAU }}
+          username: ${{ vars.DOCKERHUB_USERNAME_LSC }}
+          password: ${{ secrets.DOCKERHUB_TOKEN_LSC }}
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       - name: Set up Docker Buildx
