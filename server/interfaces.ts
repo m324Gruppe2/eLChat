@@ -13,6 +13,7 @@ export interface Message {
   message?: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/ban-types
 export interface DebouncedFunction extends Function {
   cancel: () => void;
   flush: () => void;
