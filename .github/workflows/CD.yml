@@ -5,7 +5,6 @@ on:
     types: [closed]
     branches:
       - main
-
 jobs:
   build-deploy:
     runs-on:
@@ -28,7 +27,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: leandroinf23/elchat:latest
+          tags: leandroinf23/elchat:${{ github.sha}}
 
       - name: Check and Install kubectl
         uses: azure/setup-kubectl@v3
