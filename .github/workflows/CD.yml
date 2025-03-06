@@ -28,7 +28,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: leandroinf23/elChat:latest
+          tags: leandroinf23/elhat:latest
 
       - name: Check and Install kubectl
         uses: azure/setup-kubectl@v3
