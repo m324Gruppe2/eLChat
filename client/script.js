@@ -24,6 +24,7 @@
         break;
       case 'typing':
         typingUsers = message.users;
+        document.getElementById("typingUser").innerHTML = `Typing: ${typingUsers}`
         break;
       default:
         break;
