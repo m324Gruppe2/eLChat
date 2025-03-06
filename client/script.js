@@ -30,6 +30,7 @@
         break;
       case 'typing':
         typingUsers = message.users;
+
         const typingUserList = document.getElementById('typingUser');
         typingUserList.innerHTML = '';
         typingUsers.forEach((user) => {

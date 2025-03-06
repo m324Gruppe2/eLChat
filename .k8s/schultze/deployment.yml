@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: elchat # Change this to your app name
-  namespace: m324-csbe-augustiny # Ask the teacher for the namespace name
+  name: schultze # Change this to your app name
+  namespace: m324-csbe-schultze # Ask the teacher for the namespace name
   labels:
-    app: elchat # Change this to your app name
+    app: schultze # Change this to your app name
 spec:
   replicas: 1
   revisionHistoryLimit: 2
   selector:
     matchLabels:
-      app: elchat # Change this to your app name
+      app: schultze # Change this to your app name
   template:
     metadata:
       labels:
-        app: elchat # Change this to your app name
+        app: schultze # Change this to your app name
     spec:
       containers:
-        - name: elchat # Change this to your app name
-          image: ${IMAGE_TAG} # Change this to your image tag
+        - name: schultze # Change this to your app name
+          image: ${IMAGE_TAG}
           command:
             - /bin/sh
             - '-c'

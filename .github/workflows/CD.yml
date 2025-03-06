@@ -5,7 +5,8 @@ on:
     types: [closed]
     branches:
       - main
-
+env:
+  IMAGE_TAG: leandroinf23/elchat:${{github.sha}}
 jobs:
   build-deploy:
     runs-on:
@@ -28,7 +29,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: leandroinf23/elchat:latest
+          tags: ${{env.IMAGE_TAG}}
 
       - name: Check and Install kubectl
         uses: azure/setup-kubectl@v3
@@ -49,4 +50,18 @@ jobs:
             .k8s/elChat/deployment.yml
             .k8s/elChat/service.yml
             .k8s/elChat/ingress.yml
+          replacement-method: defined
+      - name: Set Kubernetes Context
+        uses: azure/k8s-set-context@v3
+        with:
+          kubeconfig: ${{ secrets.KUBE_CONFIG_LSC }}
+
+      - name: Replace and Apply Kubernetes Manifests
+        uses: swdotcom/update-and-apply-kubernetes-configs@v1
+        with:
+          k8-config-file-paths: |
+            .k8s/namespace_schultze.yml
+            .k8s/schultze/deployment.yml
+            .k8s/schultze/service.yml
+            .k8s/schultze/ingress.yml
           replacement-method: defined

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: elchatmonitor
+  namespace: m324-csbe-augustiny
+spec:
+  selector:
+    app: elchatmonitor
+  ports:
+  - name: elchatmonitor
+    port: 3001

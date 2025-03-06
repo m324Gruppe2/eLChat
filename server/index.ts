@@ -5,6 +5,7 @@ import connectLiveReload from 'connect-livereload';
 import { Request, Response } from 'express';
 import { initializeWebsocketServer } from './websocketserver';
 import { WebSocket } from 'ws';
+import { initializeApi } from './api';
 
 // Create the express server
 const app = express();
@@ -33,6 +34,8 @@ app.get('/', (req: Request, res: Response) => {
 });
 // Initialize the websocket server
 initializeWebsocketServer(server);
+
+initializeApi(app);
 
 //start the web server
 const startServer = (serverPort: number) => {
