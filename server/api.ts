@@ -1,10 +1,9 @@
 const initializeApi = (app) => {
-    app.get('/api/healthcheck', healthCheck);
-}
+  app.get('/api/healthcheck', healthCheck);
+};
 
 const healthCheck = (req, res) => {
-    res.sendStatus(200)
-  }
+  res.sendStatus(200);
+};
 
-
-export {initializeApi}
+export { initializeApi };

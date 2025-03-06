@@ -35,7 +35,7 @@ app.get('/', (req: Request, res: Response) => {
 // Initialize the websocket server
 initializeWebsocketServer(server);
 
-initializeApi(app)
+initializeApi(app);
 
 //start the web server
 const startServer = (serverPort: number) => {
