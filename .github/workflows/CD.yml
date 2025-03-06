@@ -46,7 +46,7 @@ jobs:
         with:
           k8-config-file-paths: |
             .k8s/namespace.yml
-            .k8s/elchat/deployment.yml
-            .k8s/elchat/service.yml
-            .k8s/elchat/ingress.yml
+            .k8s/elChat/deployment.yml
+            .k8s/elChat/service.yml
+            .k8s/elChat/ingress.yml
           replacement-method: defined
