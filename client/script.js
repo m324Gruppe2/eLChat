@@ -21,9 +21,21 @@
         break;
       case 'activeUsers':
         activeUsers = message.users;
+        const activeUsersList = document.getElementById('activeUsers');
+        activeUsersList.innerHTML = '';
+        activeUsers.forEach((user) => {
+          console.log(user);
+          activeUsersList.innerHTML += `<p>${user.name}</p>`;
+        });
         break;
       case 'typing':
         typingUsers = message.users;
+        const typingUserList = document.getElementById("typingUser")
+        typingUserList.innerHTML = ''
+        typingUsers.forEach((user) => {
+          console.log(user);
+          typingUserList.innerHTML += `Typing: ${user.name}`;
+        });
         break;
       default:
         break;

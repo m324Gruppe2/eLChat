@@ -11,35 +11,46 @@
     <script src="/script.js"></script>
   </head>
   <body>
-    <div class="w-full h-screen flex justify-center bg-gray-900">
+    <div class="w-full h-screen flex justify-end bg-gray-900">
       <div class="max-w-2xl w-full md:w-3/4 lg:w-2/4 flex flex-col h-full">
         <div class="bg-blue-500 px-4 py-4 rounded-b">
           <p class="text-lg font-bold text-white">LB1 Chat - M324</p>
         </div>
         <div class="flex-grow flex flex-col justify-start p-4 gap-4 overflow-y-auto" id="messages"></div>
-        <div class="bg-gray-900 px-4 py-4 flex items-center rounded-t">
-          <input
-            id="messageInput"
-            type="text"
-            placeholder="Type a message"
-            class="flex-grow px-4 py-2 rounded-full border-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-300 bg-gray-700 text-white"
-          />
-          <button class="ml-4 text-cyan-300 hover:text-cyan-400 focus:outline-none" id="sendButton">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
+          <div class="bg-gray-900 px-4 py-4 flex-col items-center rounded-t">
+            <p id="typingUser" class="text-white"></p>
+            <div class="flex">
+              <input
+          <div class="bg-gray-900 px-4 py-4 flex items-center rounded-t">
+            <input
+              id="messageInput"
+              type="text"
+              placeholder="Type a message"
+              class="flex-grow px-4 py-2 rounded-full border-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-300 bg-gray-700 text-white"
+              />
+              <button class="ml-4 text-cyan-300 hover:text-cyan-400 focus:outline-none" id="sendButton">
+                <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                >
+                <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
                 d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-              />
-            </svg>
-          </button>
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="w-1/3 py-5 h-full px-10 overflow-y-auto">
+        <div class="bg-gray-700 p-3 rounded-md h-full text-white text-lg">
+          <h1 class="text-blue-500 font-bold text-xl">Online</h1>
+          <div id="activeUsers"></div>
         </div>
       </div>
     </div>
