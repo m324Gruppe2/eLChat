@@ -24,7 +24,11 @@
         break;
       case 'typing':
         typingUsers = message.users;
-        document.getElementById("typingUser").innerHTML = `Typing: ${typingUsers}`
+        const typingUserList = document.getElementById("typingUser")
+        activeUsers.forEach((user) => {
+          console.log(user);
+          typingUserList.innerHTML += `Typing: ${user.name}`;
+        });
         break;
       default:
         break;
