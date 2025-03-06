@@ -25,7 +25,8 @@
       case 'typing':
         typingUsers = message.users;
         const typingUserList = document.getElementById("typingUser")
-        activeUsers.forEach((user) => {
+        typingUserList.innerHTML = ''
+        typingUsers.forEach((user) => {
           console.log(user);
           typingUserList.innerHTML += `Typing: ${user.name}`;
         });
