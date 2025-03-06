@@ -1,8 +1,8 @@
-const initializeApi = (app) => {
+const initializeApi = (app: any) => {
   app.get('/api/healthcheck', healthCheck);
 };
 
-const healthCheck = (req, res) => {
+const healthCheck = (req: any, res: any) => {
   res.sendStatus(200);
 };
 
