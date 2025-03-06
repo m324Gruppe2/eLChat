@@ -28,7 +28,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: leandroinf23/elhat:latest
+          tags: leandroinf23/elchat:latest
 
       - name: Check and Install kubectl
         uses: azure/setup-kubectl@v3
@@ -46,7 +46,7 @@ jobs:
         with:
           k8-config-file-paths: |
             .k8s/namespace.yml
-            .k8s/elChat/deployment.yml
-            .k8s/elChat/service.yml
-            .k8s/elChat/ingress.yml
+            .k8s/elchat/deployment.yml
+            .k8s/elchat/service.yml
+            .k8s/elchat/ingress.yml
           replacement-method: defined

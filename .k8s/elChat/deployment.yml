@@ -1,27 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: elChat # Change this to your app name
+  name: elchat # Change this to your app name
   namespace: m324-csbe-augustiny # Ask the teacher for the namespace name
   labels:
-    app: elChat # Change this to your app name
+    app: elchat # Change this to your app name
 spec:
   replicas: 1
   revisionHistoryLimit: 2
   selector:
     matchLabels:
-      app: elChat # Change this to your app name
+      app: elchat # Change this to your app name
   template:
     metadata:
       labels:
-        app: elChat # Change this to your app name
+        app: elchat # Change this to your app name
     spec:
       containers:
-        - name: elChat # Change this to your app name
-          image: leandroinf23/elChat:latest # Change this to your image tag
+        - name: elchat # Change this to your app name
+          image: leandroinf23/elchat:latest # Change this to your image tag
           command:
             - /bin/sh
-            - "-c"
+            - '-c'
             - yarn start
           startupProbe:
             httpGet:
