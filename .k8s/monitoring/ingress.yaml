@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: elchatmonitor
+  namespace: m324-csbe-augustiny
+  annotations:
+    kubernetes.io/ingress.class: "nginx"    
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+    cert-manager.io/cluster-issuer: "letsencrypt-staging"
+spec:
+  tls:
+  - hosts:
+    - monitor-elchat.m324.hackerman.ch
+    secretName: monitor-elchat.m324.hackerman.ch-tls
+  rules:
+  - host: monitor-elchat.m324.hackerman.ch
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: elchatmonitor
+            port:
+              number: 3001
