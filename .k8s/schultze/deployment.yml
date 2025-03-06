@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: schultze # Change this to your app name
-          image: leandroinf23/elchat:${{github.sha}} # Change this to your image tag
+          image: ${IMAGE_TAG}
           command:
             - /bin/sh
             - '-c'
