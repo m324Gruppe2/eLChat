@@ -30,8 +30,9 @@
         break;
       case 'typing':
         typingUsers = message.users;
-        const typingUserList = document.getElementById("typingUser")
-        typingUserList.innerHTML = ''
+
+        const typingUserList = document.getElementById('typingUser');
+        typingUserList.innerHTML = '';
         typingUsers.forEach((user) => {
           console.log(user);
           typingUserList.innerHTML += `Typing: ${user.name}`;
