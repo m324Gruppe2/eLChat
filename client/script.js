@@ -57,6 +57,22 @@
       socket.send(JSON.stringify({ type: 'message', message, user: myUser }));
       document.getElementById('messageInput').value = '';
     });
+
+    document.getElementById('lightSwitch').addEventListener('change', function () {
+      if (this.checked) {
+        document.getElementById('background').classList.replace('bg-gray-900', 'bg-white');
+        document.getElementById('activeUsersBox').classList.replace('bg-gray-700', 'bg-gray-200');
+        document.getElementById('activeUsersBox').classList.replace('text-white', 'text-black');
+        document.getElementById('messageInputBox').classList.replace('bg-gray-900', 'bg-white');
+        document.getElementById('messageInput').classList.replace('bg-gray-700', 'bg-gray-200');
+      } else {
+        document.getElementById('background').classList.replace('bg-white', 'bg-gray-900');
+        document.getElementById('activeUsersBox').classList.replace('bg-gray-200', 'bg-gray-700');
+        document.getElementById('activeUsersBox').classList.replace('text-black', 'text-white');
+        document.getElementById('messageInputBox').classList.replace('bg-white', 'bg-gray-900');
+        document.getElementById('messageInput').classList.replace('bg-gray-200', 'bg-gray-700');
+      }
+    });
   });
 
   document.addEventListener('keydown', (event) => {
